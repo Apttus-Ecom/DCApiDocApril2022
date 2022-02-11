@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "Digital Commerce Documentation",
-        "description": "## Basics\n\nThis page describes the headless Digital Commerce service that enables rapid experience-first commerce development and applications.\n\nThe Digital Commerce API follows a microservice architecture that enables commerce into any part of an application and is built on the [JSON API](https://jsonapi.org/ \"https://jsonapi.org/\") specification, follows predictable [REST](https://en.wikipedia.org/wiki/Representational_state_transfer \"https://en.wikipedia.org/wiki/Representational_state_transfer\") URLs and supports [cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing \"https://en.wikipedia.org/wiki/Cross-origin_resource_sharing\").\n\n## Authentication\n\nAll requests to the API need to be accompanied by an authorization header with a standard salesforce authentication token\n\n    Authorization: Bearer 00D230000000nZM!ARMAQHLLm33JxYYP.UJn1gF6FFmLv8sDYK_8szeckHWtbguztoBpF0HL8...\n\nThe SDK comes with built-in mechanisms for obtaining the above authentication token or you may use any standard Salesforce [approach](https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm&type=5 \"https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm&type=5\") for obtaining a custom access token for use with the API.\n\n## Endpoint\n\nThe Digital Commerce API is installed with the Digital Commerce managed package and can be exposed to external applications via a Salesforce site or community. Once a community or site has been built, all API’s will have the structure\n\n    https://mycommunity.force.com/community/services/apexrest/apttus/:version/:api`\n\n\n## Versions\n\nThe Digital Commerce API ensures backward compatibility by properly versioning any changes to the APIs. Should changes to the API structure need to be made, it will occur within a new version and older functionality will be preserved.\n\n## X-Storefront Header Parameter\n\nIn order to match your API requests with a storefront, the x-storefront parameter must be used with all requests in the request header. It should match a storefront name record in SFDC.\n\n    x-storefront: my-storefront`\n\n\n## Content Type\n\nRequests made to the API must be encoded as **JSON** and contain the header\n\n    Content-Type: application/json\n\n## Includes\n\nYou can easily include resource relationships on most top-level resources. Multiple includes are defined using comma delimited values.\n\n## Caching\n\nServer side caching is used and can be configured per request using the cacheStrategy query parameter.\n\n## Errors\n\nAny request that returns an error follows a standard format. The Digital Commerce API will return an array of errors that contains objects containing the status, title and data with the error details.\n\n|**Code**|**Response**|\n|--|--|\n| 201 | Created Successfully |\n| 200 | Updated Successfully |\n| 204 | Deleted Successfully |\n| 400 | Invalid JSON |\n| 422 | Validation Error |\n| 500 | Something went wrong on our end |",
+        "description": "## Basics\n\nThis page describes the headless Digital Commerce service that enables rapid experience-first commerce development and applications.\n\nThe Digital Commerce API follows a microservice architecture that enables commerce into any part of an application and is built on the [JSON API](https://jsonapi.org/ \"https://jsonapi.org/\") specification, follows predictable [REST](https://en.wikipedia.org/wiki/Representational_state_transfer \"https://en.wikipedia.org/wiki/Representational_state_transfer\") URLs and supports [cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing \"https://en.wikipedia.org/wiki/Cross-origin_resource_sharing\").\n\n## Authentication\n\nAll requests to the API need to be accompanied by an authorization header with a standard salesforce authentication token\n\n    Authorization: Bearer 00D230000000nZM!ARMAQHLLm33JxYYP.UJn1gF6FFmLv8sDYK_8szeckHWtbguztoBpF0HL8...\n\nThe SDK comes with built-in mechanisms for obtaining the above authentication token or you may use any standard Salesforce [approach](https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm&type=5 \"https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm&type=5\") for obtaining a custom access token for use with the API.\n\n## Endpoint\n\nThe Digital Commerce API is installed with the Digital Commerce managed package and can be exposed to external applications via a Salesforce site or community. Once a community or site has been built, all API’s will have the structure\n\n    https://mycommunity.force.com/community/services/apexrest/apttus/:version/:api`\n\n\n## Versions\n\nThe Digital Commerce API ensures backward compatibility by properly versioning any changes to the APIs. Should changes to the API structure need to be made, it will occur within a new version and older functionality will be preserved.\n\n## X-Storefront Header Parameter\n\nIn order to match your API requests with a storefront, the x-storefront parameter must be used with all requests in the request header. It should match a storefront name record in SFDC.\n\n    x-storefront: my-storefront`\n\n\n## Content Type\n\nRequests made to the API must be encoded as **JSON** and contain the header\n\n    Content-Type: application/json  \n\n## X-Account Header Parameter\n\nIn order to set the default account, the account value from header can be passed as query param, the x-account parameter is optional in the request header. If passed it should match the Id of the account record in SFDC.\n\n    x-account: 0011900000hnGsr` \n\n## Includes\n\nYou can easily include resource relationships on most top-level resources. Multiple includes are defined using comma delimited values.\n\n## Caching\n\nServer side caching is used and can be configured per request using the cacheStrategy query parameter.\n\n## Errors\n\nAny request that returns an error follows a standard format. The Digital Commerce API will return an array of errors that contains objects containing the status, title and data with the error details.\n\n|**Code**|**Response**|\n|--|--|\n| 201 | Created Successfully |\n| 200 | Updated Successfully |\n| 204 | Deleted Successfully |\n| 400 | Invalid JSON |\n| 422 | Validation Error |\n| 500 | Something went wrong on our end |",
         "contact": {},
         "version": "4.0"
     },
@@ -18418,7 +18418,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Request body of Add product to cart. \n\nExample 1: Line Item and associated attributes and product attributes. \n\nExample 2: Single product record or an array of products (if multiple). \n\n Example 3: Favorite configuration added to cart.",
+                    "description": "Request body of Add product to cart. \n\nExample 1: Line Item and associated attributes and product attributes. \n\nExample 2: Single product record or an array of products (if multiple). \n\n Example 3: List of line items of favorites added to cart.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -19350,7 +19350,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Request body of clone line item of the cart. ",
+                    "description": "Request body of clone line item of the cart accepts list of lineNumbers. ",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -25662,184 +25662,6 @@
             }
         },
         "/favorites/{favoriteId}": {
-            "get": {
-                "tags": [
-                    "Favorites"
-                ],
-                "summary": "Get favorites",
-                "description": "Get favorite configuration based on the favorite Id passed in the path",
-                "operationId": "GetFavorites",
-                "parameters": [
-                    {
-                        "name": "favoriteId",
-                        "in": "path",
-                        "description": "The reference Id of the favorite",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "a3e79000000WYtUAAW"
-                        }
-                    },
-                    {
-                        "name": "x-storefront",
-                        "in": "header",
-                        "description": "The name of the storefront being used for the request.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "ECommerce"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content type of the request body.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "application/json"
-                        }
-                    },
-                    {
-                        "name": "x-account",
-                        "in": "header",
-                        "description": "The account value from header will be taken as default account if passed as query param",
-                        "required": false,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "0011900000hnGsr"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Favorites"
-                                },
-                                "example": {
-                                    "title": "success",
-                                    "status": 200,
-                                    "data": {
-                                        "PriceList": {
-                                            "APTS_Ext_ID": "a171T000005il1XQAQ",
-                                            "DisableBasedOnCurrencyAdjustment": false,
-                                            "Type": "Contract",
-                                            "GuidePage": "APTPSGuidedSelling",
-                                            "EffectiveDate": "2018-10-31T08:22:00.000Z",
-                                            "Active": true,
-                                            "SystemModstamp": "2021-08-17T10:01:54.000Z",
-                                            "LastModifiedById": "00550000000vtlpAAA",
-                                            "LastModifiedDate": "2021-08-17T10:01:54.000Z",
-                                            "CreatedById": "00550000000vtlpAAA",
-                                            "CreatedDate": "2019-05-08T11:14:39.000Z",
-                                            "CurrencyIsoCode": "USD",
-                                            "Name": "Tier 1 Hardware & Software",
-                                            "IsDeleted": false,
-                                            "OwnerId": "00550000000vtlpAAA",
-                                            "Id": "a171T000005il1XQAQ"
-                                        },
-                                        "Configuration": {
-                                            "Collaboration_GeoLocation": null,
-                                            "Collaboration_Checkbox": false,
-                                            "UseType": "Main",
-                                            "BusinessObjectProfile": "Regular",
-                                            "IsValidationPending": false,
-                                            "IsTaskPending": false,
-                                            "CollaborationRequestId": "a3K79000001EZNwEAO",
-                                            "BusinessObjectRefId": "a3K79000001EZNwEAO",
-                                            "ShipToAccountId": "0011900000hnGsrAAE",
-                                            "CartDataCache": "{\n  \"usePriceEscalators\" : false,\n  \"useFormulaPricing\" : false,\n  \"useBasicTotaling\" : false,\n  \"splitCartThreshold\" : null,\n  \"splitCartCriteriaFields\" : null,\n  \"priceInErrorLineNumbers\" : [ ],\n  \"priceCompletedLineNumbers\" : [ ],\n  \"priceCompletedChunkLineNumbers\" : [ ],\n  \"pendingDepItemKeys\" : [ ],\n  \"lastIndex\" : 0,\n  \"lastChunkItemSequence\" : null,\n  \"IsProductGroupEnabled\" : false,\n  \"IsProductFamilyEnabled\" : false,\n  \"isPrestoCallPending\" : null,\n  \"isPrePricingStepPending\" : null,\n  \"isPostPricingStepPending\" : null,\n  \"IsOptionPricePending\" : false,\n  \"IsIncentivePricePending\" : false,\n  \"IsEmpty\" : false,\n  \"IsCustomGroupEnabled\" : false,\n  \"idxCType\" : { },\n  \"icPriceCompletedChunkLineNumbers\" : [ ],\n  \"hasDeferredDependentItems\" : false,\n  \"DependentItemKeyMap\" : { },\n  \"currAdHocGroupByField\" : null,\n  \"cTypeIdx\" : { },\n  \"couponUsage\" : { },\n  \"couponCodes\" : [ ],\n  \"chunkBundleLineNumber\" : null\n}",
-                                            "BillToAccountId": "0011900000hnGsrAAE",
-                                            "EffectivePriceListId": "a171T000005il1XQAQ",
-                                            "NumberOfItems": 2,
-                                            "BaseRelationCount": 0,
-                                            "SummaryGroupType": "Category",
-                                            "Status": "New",
-                                            "PriceListId": "a171T000005il1XQAQ",
-                                            "IsTransient": true,
-                                            "IsPricePending": false,
-                                            "BusinessObjectType": "Favorite Configuration",
-                                            "BusinessObjectId": "a3K79000001EZNwEAO",
-                                            "AccountId": "0011900000hnGsrAAE",
-                                            "LastReferencedDate": "2022-02-10T13:02:38.000Z",
-                                            "LastViewedDate": "2022-02-10T13:02:38.000Z",
-                                            "SystemModstamp": "2022-02-03T07:21:41.000Z",
-                                            "LastModifiedById": "00523000001ES0MAAW",
-                                            "LastModifiedDate": "2022-02-03T07:21:41.000Z",
-                                            "CreatedById": "00523000001ES0MAAW",
-                                            "CreatedDate": "2022-02-03T07:21:39.000Z",
-                                            "CurrencyIsoCode": "USD",
-                                            "Name": "Product Config - a3e79000000WAC2AAO",
-                                            "IsDeleted": false,
-                                            "OwnerId": "00523000001ES0MAAW",
-                                            "Id": "a1I790000005QxFEAU"
-                                        },
-                                        "CreatedBy": {
-                                            "FullPhotoUrl": "/ecom/profilephoto/005/F",
-                                            "SmallPhotoUrl": "/ecom/profilephoto/005/T",
-                                            "LastModifiedDate": "2021-11-16T10:15:32.000Z",
-                                            "CreatedDate": "2019-10-10T05:54:35.000Z",
-                                            "LastLoginDate": "2022-02-09T09:53:28.000Z",
-                                            "LanguageLocaleKey": "en_US",
-                                            "CurrencyIsoCode": "USD",
-                                            "DefaultCurrencyIsoCode": "USD",
-                                            "EmailEncodingKey": "ISO-8859-1",
-                                            "LocaleSidKey": "en_US",
-                                            "TimeZoneSidKey": "America/Los_Angeles",
-                                            "Alias": "apc",
-                                            "Username": "automation4@apttus.com.cu.dc2",
-                                            "LastName": "DC",
-                                            "FirstName": "Automation4",
-                                            "Address": {
-                                                "city": "TUCSON",
-                                                "country": null,
-                                                "countryCode": null,
-                                                "geocodeAccuracy": null,
-                                                "latitude": null,
-                                                "longitude": null,
-                                                "postalCode": "85705",
-                                                "state": null,
-                                                "stateCode": null,
-                                                "street": "799 E DRAGRAM SUITE 5A"
-                                            },
-                                            "Name": "Automation4 DC",
-                                            "Id": "00523000001ES0MAAW"
-                                        },
-                                        "Scope": "Public",
-                                        "PriceListId": "a171T000005il1XQAQ",
-                                        "LastUsedDate": "2022-02-03T07:22:16.000Z",
-                                        "Description": "Desc_1643872894966",
-                                        "ConfigurationId": "a1I790000005QxFEAU",
-                                        "Active": true,
-                                        "SystemModstamp": "2022-02-03T07:22:16.000Z",
-                                        "LastModifiedById": "00523000001ES0MAAW",
-                                        "LastModifiedDate": "2022-02-03T07:22:16.000Z",
-                                        "CreatedById": "00523000001ES0MAAW",
-                                        "CreatedDate": "2022-02-03T07:21:38.000Z",
-                                        "CurrencyIsoCode": "USD",
-                                        "Name": "Fav_1643872886544",
-                                        "IsDeleted": false,
-                                        "OwnerId": "00523000001ES0MAAW",
-                                        "Id": "a3e79000000WAC2AAO"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "deprecated": false
-            },
             "post": {
                 "tags": [
                     "Favorites"
@@ -25898,18 +25720,38 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Request body of add favorite configuration",
+                    "description": "Request body of add favorite \n\n Example 1: list of lineNumber. \n\nExample 2: Single product record or an array of products (if multiple).",
                     "content": {
                         "application/json": {
                             "schema": {
                                 "type": "array",
                                 "items": {
-                                    "type": "number"
+                                    "type": "object"
+                                },
+                                "properties": {
+                                    "ProductId": {
+                                        "type": "object"
+                                    },
+                                    "Quantity": {
+                                        "type": "number"
+                                    }
                                 }
                             },
-                            "example": [
-                                1
-                            ]
+                            "examples": {
+                                "example1": {
+                                    "summary": "Example 1",
+                                    "value": [
+                                        1
+                                    ]
+                                },
+                                "example2": {
+                                    "summary": "Example 2",
+                                    "value": {
+                                        "ProductId": "01t4R00000J5R6i",
+                                        "Quantity": 1
+                                    }
+                                }
+                            }
                         }
                     }
                 },
@@ -26084,18 +25926,38 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Request body of update favorite configuration",
+                    "description": "Request body of update favorite \n\n Example 1: list of lineNumber. \n\nExample 2: Single product record or an array of products (if multiple).",
                     "content": {
                         "application/json": {
                             "schema": {
                                 "type": "array",
                                 "items": {
-                                    "type": "number"
+                                    "type": "object"
+                                },
+                                "properties": {
+                                    "ProductId": {
+                                        "type": "object"
+                                    },
+                                    "Quantity": {
+                                        "type": "number"
+                                    }
                                 }
                             },
-                            "example": [
-                                1
-                            ]
+                            "examples": {
+                                "example1": {
+                                    "summary": "Example 1",
+                                    "value": [
+                                        1
+                                    ]
+                                },
+                                "example2": {
+                                    "summary": "Example 2",
+                                    "value": {
+                                        "ProductId": "01t4R00000J5R6i",
+                                        "Quantity": 1
+                                    }
+                                }
+                            }
                         }
                     }
                 },
@@ -26342,16 +26204,26 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Request body of delete favorite configuartion having List of favorite Id's",
+                    "description": "Request body of delete favorite  having List of favorite Id's",
                     "content": {
                         "application/json": {
                             "schema": {
                                 "type": "array",
                                 "items": {
-                                    "type": "string"
+                                    "type": "object"
+                                },
+                                "properties": {
+                                    "Id": {
+                                        "type": "string"
+                                    }
                                 },
                                 "example": [
-                                    "a3e79000000WYsWAAW"
+                                    {
+                                        "Id": "a3e79000000WdL4AAK"
+                                    },
+                                    {
+                                        "Id": "a3e79000000WdKzAAK"
+                                    }
                                 ]
                             }
                         }
@@ -26370,7 +26242,12 @@
                                     "status": 200,
                                     "data": [
                                         {
-                                            "id": "a3e79000000WYsWAAW",
+                                            "id": "a3e79000000WdKzAAK",
+                                            "success": true,
+                                            "errors": []
+                                        },
+                                        {
+                                            "id": "a3e79000000WdL4AAK",
                                             "success": true,
                                             "errors": []
                                         }
@@ -35277,41 +35154,6 @@
                         }
                     }
                 ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "renewEndDate": {
-                                        "type": "string"
-                                    },
-                                    "renewTerm": {
-                                        "type": "number"
-                                    },
-                                    "AssetIds": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "farthestAssetEndDate": {
-                                        "type": "boolean"
-                                    }
-                                }
-                            },
-                            "example": {
-                                "assetIds": [
-                                    "a0e19000001MrUyAAK"
-                                ],
-                                "renewEndDate": "2021-12-03 00:00:00",
-                                "renewTerm": null,
-                                "farthestAssetEndDate": false
-                            }
-                        }
-                    },
-                    "required": true
-                },
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -35320,7 +35162,11 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/SuccessResponse"
                                 },
-                                "example":{"title":"success","status":200,"data":true}
+                                "example": {
+                                    "title": "success",
+                                    "status": 200,
+                                    "data": true
+                                }
                             }
                         }
                     }
