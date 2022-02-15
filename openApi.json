@@ -55,6 +55,9 @@
         },
         {
             "name": "Collaboration Request"
+        },
+        {
+            "name": "User Views"
         }
     ],
     "paths": {
@@ -416,6 +419,412 @@
                                         "Username": "chmoyle@apttus.com.webstore.dev",
                                         "Id": "0050f000008nTccAAE"
                                     }
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/users/{userId}/views/{viewId}": {
+            "get": {
+                "tags": [
+                    "User Views"
+                ],
+                "summary": "Get user view",
+                "description": "You can easily get the list of Config Custom Display Columns Detail record information by passing the Id of the user in 'userId' and passing the Id of the user view in 'viewId'",
+                "operationId": "GetUserView",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "The Id of the user.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "005R0000005OT2UIAW"
+                        }
+                    },
+                    {
+                        "name": "viewId",
+                        "in": "path",
+                        "description": "The Id of the user view.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "a5c79000000G72P"
+                        }
+                    },
+                    {
+                        "name": "x-storefront",
+                        "in": "header",
+                        "description": "The name of the storefront being used for the request.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "ECommerce"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content type of the request body.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "application/json"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserView"
+                                },
+                                "example": {
+                                    "title": "success",
+                                    "status": 200,
+                                    "data": [
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WrAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 1,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__Frequency__c",
+                                                "Id": "a0m79000000u3WrAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WsAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 2,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__PriceType__c",
+                                                "Id": "a0m79000000u3WsAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WtAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 3,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__SellingTerm__c",
+                                                "Id": "a0m79000000u3WtAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WuAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": true,
+                                                "Apttus_Config2__Sequence__c": 4,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__StartDate__c",
+                                                "Id": "a0m79000000u3WuAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WvAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": true,
+                                                "Apttus_Config2__Sequence__c": 5,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__EndDate__c",
+                                                "Id": "a0m79000000u3WvAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WwAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": true,
+                                                "Apttus_Config2__Sequence__c": 6,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__Quantity__c",
+                                                "Id": "a0m79000000u3WwAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": false,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WxAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 7,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__ChargeType__c",
+                                                "Id": "a0m79000000u3WxAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": false,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WyAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 8,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__BasePrice__c",
+                                                "Id": "a0m79000000u3WyAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": false,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WzAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 9,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__ExtendedPrice__c",
+                                                "Id": "a0m79000000u3WzAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": false,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3X0AAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 10,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__NetPrice__c",
+                                                "Id": "a0m79000000u3X0AAI"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/users/{userId}/views/active": {
+            "get": {
+                "tags": [
+                    "User Views"
+                ],
+                "summary": "Get active user view",
+                "description": "You can easily fetch the list of Config Custom Display Columns Detail record information for the active UserView for the User by passing the Id of the user in 'userId' and passing 'active' parameter to the UserView API'",
+                "operationId": "GetActiveUserView",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "The Id of the user.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "005R0000005OT2UIAW"
+                        }
+                    },
+                    {
+                        "name": "x-storefront",
+                        "in": "header",
+                        "description": "The name of the storefront being used for the request.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "ECommerce"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content type of the request body.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "application/json"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserView"
+                                },
+                                "example": {
+                                    "title": "success",
+                                    "status": 200,
+                                    "data": [
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WrAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 1,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__Frequency__c",
+                                                "Id": "a0m79000000u3WrAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WsAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 2,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__PriceType__c",
+                                                "Id": "a0m79000000u3WsAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WtAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 3,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__SellingTerm__c",
+                                                "Id": "a0m79000000u3WtAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WuAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": true,
+                                                "Apttus_Config2__Sequence__c": 4,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__StartDate__c",
+                                                "Id": "a0m79000000u3WuAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WvAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": true,
+                                                "Apttus_Config2__Sequence__c": 5,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__EndDate__c",
+                                                "Id": "a0m79000000u3WvAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": true,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WwAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": true,
+                                                "Apttus_Config2__Sequence__c": 6,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__Quantity__c",
+                                                "Id": "a0m79000000u3WwAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": false,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WxAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 7,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__ChargeType__c",
+                                                "Id": "a0m79000000u3WxAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": false,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WyAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 8,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__BasePrice__c",
+                                                "Id": "a0m79000000u3WyAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": false,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3WzAAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 9,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__ExtendedPrice__c",
+                                                "Id": "a0m79000000u3WzAAI"
+                                            }
+                                        },
+                                        {
+                                            "IsSelected": false,
+                                            "DisplayColumn": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__ConfigCustomDisplayColumns__c",
+                                                    "url": "/services/data/v54.0/sobjects/Apttus_Config2__ConfigCustomDisplayColumns__c/a0m79000000u3X0AAI"
+                                                },
+                                                "Apttus_Config2__IsEditable__c": false,
+                                                "Apttus_Config2__Sequence__c": 10,
+                                                "Apttus_Config2__FieldName__c": "Apttus_Config2__NetPrice__c",
+                                                "Id": "a0m79000000u3X0AAI"
+                                            }
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -38811,6 +39220,32 @@
                     },
                     "Id": {
                         "type": "string"
+                    }
+                }
+            },
+            "UserView": {
+                "title": "UserView",
+                "type": "object",
+                "properties": {
+                    "IsSelected": {
+                        "type": "boolean"
+                    },
+                    "DisplayColumn": {
+                        "type": "object",
+                        "properties": {
+                            "Apttus_Config2__IsEditable__c": {
+                                "type": "boolean"
+                            },
+                            "Apttus_Config2__Sequence__c": {
+                                "type": "number"
+                            },
+                            "Apttus_Config2__FieldName__c": {
+                                "type": "string"
+                            },
+                            "Id":  {
+                                "type": "string"
+                            }
+                        }
                     }
                 }
             }
