@@ -433,7 +433,7 @@
                     "User Views"
                 ],
                 "summary": "Get user view",
-                "description": "You can easily get the list of Config Custom Display Columns Detail record information by passing the Id of the user in 'userId' and passing the Id of the user view in 'viewId'",
+                "description": "You can easily get the list of Config Custom Display Columns Detail record information with field marked as selected from userview by passing the Id of the user in 'userId' and passing the Id of the user view in 'viewId'.",
                 "operationId": "GetUserView",
                 "parameters": [
                     {
@@ -642,7 +642,7 @@
                     "User Views"
                 ],
                 "summary": "Get active user view",
-                "description": "You can easily fetch the list of Config Custom Display Columns Detail record information for the active UserView for the User by passing the Id of the user in 'userId' and passing 'active' parameter to the UserView API'",
+                "description": "You can easily fetch the list of Config Custom Display Columns Detail record information with field marked as selected from the active UserView for the User by passing the Id of the user in 'userId' parameter.",
                 "operationId": "GetActiveUserView",
                 "parameters": [
                     {
