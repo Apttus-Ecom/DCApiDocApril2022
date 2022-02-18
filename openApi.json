@@ -7781,7 +7781,7 @@
                     "Carts"
                 ],
                 "summary": "Get Active Cart",
-                "description": "You can easily get a new or existing cart by providing the unique cart reference in the request or simply 'active' for the current active cart.\n\n If 'active' is used and the user hasn't created a cart, a prepopulated cart will be returned with basic header information. This cart will not contain an Id and will be inserted the first time a product is added to the cart.",
+                "description": "You can easily get a new or existing cart by providing the unique cart reference in the request or simply use 'active' for the current active cart.\n\n If 'active' is used and the user has not created a cart, a pre-populated cart will be returned with basic header information. This cart will not contain an Id and will be inserted, the first time a product is added to the cart.",
                 "operationId": "GetActiveCart",
                 "parameters": [
                     {
