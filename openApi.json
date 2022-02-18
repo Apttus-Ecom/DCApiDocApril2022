@@ -26488,7 +26488,7 @@
                     "Favorites"
                 ],
                 "summary": "remove favorites",
-                "description": "delete the favorite configuration based on the favorite Id passed in the path",
+                "description": "Delete the favorite configuration based on the favorite Id passed in the path.",
                 "operationId": "RemoveFavorites",
                 "parameters": [
                     {
