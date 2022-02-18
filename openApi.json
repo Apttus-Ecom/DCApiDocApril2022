@@ -25955,7 +25955,7 @@
                     "Favorites"
                 ],
                 "summary": "Create Favorites",
-                "description": "Creates new favorite configuration",
+                "description": "Creates a new favorite configuration.",
                 "operationId": "CreateFavorites",
                 "parameters": [
                     {
@@ -25985,7 +25985,7 @@
                     {
                         "name": "x-account",
                         "in": "header",
-                        "description": "The account value from header will be taken as default account if passed as query param",
+                        "description": "The account value from header will be taken as default account if passed as query param.",
                         "required": false,
                         "style": "simple",
                         "explode": false,
@@ -25996,7 +25996,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Request body for create favorite",
+                    "description": "Request body for create favorite.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -26082,7 +26082,7 @@
                     {
                         "name": "favoriteId",
                         "in": "path",
-                        "description": "The reference Id of the favorite",
+                        "description": "The reference Id of the favorite configuration.",
                         "required": true,
                         "style": "simple",
                         "explode": false,
@@ -26118,7 +26118,7 @@
                     {
                         "name": "x-account",
                         "in": "header",
-                        "description": "The account value from header will be taken as default account if passed as query param",
+                        "description": "The account value from header will be taken as default account if passed as query param.",
                         "required": false,
                         "style": "simple",
                         "explode": false,
@@ -26129,7 +26129,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Request body of add favorite \n\n Example 1: list of lineNumber. \n\nExample 2: Single product record or an array of products (if multiple).",
+                    "description": "Request body of add favorite. \n\n Example 1: list of lineNumber. \n\nExample 2: Single product record or an array of products (if multiple).",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -26282,13 +26282,13 @@
                     "Favorites"
                 ],
                 "summary": "Update favorites",
-                "description": "update favorite configuration with new cart line itmes.",
+                "description": "Update favorite configuration with new cart line items.",
                 "operationId": "UpdateFavorites",
                 "parameters": [
                     {
                         "name": "favoriteId",
                         "in": "path",
-                        "description": "The reference Id of the favorite",
+                        "description": "The reference Id of the favorite configuration.",
                         "required": true,
                         "style": "simple",
                         "explode": false,
@@ -26324,7 +26324,7 @@
                     {
                         "name": "x-account",
                         "in": "header",
-                        "description": "The account value from header will be taken as default account if passed as query param",
+                        "description": "The account value from header is taken as default account, if passed as query param.",
                         "required": false,
                         "style": "simple",
                         "explode": false,
