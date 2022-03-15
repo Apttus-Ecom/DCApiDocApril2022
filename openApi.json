@@ -26071,212 +26071,6 @@
             }
         },
         "/favorites/{favoriteId}": {
-            "post": {
-                "tags": [
-                    "Favorites"
-                ],
-                "summary": "Add favorites",
-                "description": "Add cart line items to the favorite configuration.",
-                "operationId": "AddFavorites",
-                "parameters": [
-                    {
-                        "name": "favoriteId",
-                        "in": "path",
-                        "description": "The reference Id of the favorite.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "a3e79000000WYtUAAW"
-                        }
-                    },
-                    {
-                        "name": "x-storefront",
-                        "in": "header",
-                        "description": "The name of the storefront used for the request.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "ECommerce"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content type of the request body.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "application/json"
-                        }
-                    },
-                    {
-                        "name": "x-account",
-                        "in": "header",
-                        "description": "The account value from the header is taken as default account if passed as query parameter.",
-                        "required": false,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "0011900000hnGsr"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "description": "Request body of add favorite. \n\n Example 1: list of lineNumber. \n\nExample 2: Single product record or an array of products (if multiple).",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object"
-                                },
-                                "properties": {
-                                    "ProductId": {
-                                        "type": "object"
-                                    },
-                                    "Quantity": {
-                                        "type": "number"
-                                    }
-                                }
-                            },
-                            "examples": {
-                                "example1": {
-                                    "summary": "Example 1",
-                                    "value": [
-                                        1
-                                    ]
-                                },
-                                "example2": {
-                                    "summary": "Example 2",
-                                    "value": {
-                                        "ProductId": "01t4R00000J5R6i",
-                                        "Quantity": 1
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CartItems"
-                                },
-                                "example": {
-                                    "title": "success",
-                                    "status": 200,
-                                    "data": [
-                                        {
-                                            "Product_Family": "Hardware",
-                                            "SellingUom": "Each",
-                                            "Demo_Renewal_flag": "No",
-                                            "APTS_Local_Bundle_Component_Flag": false,
-                                            "ProductVersion": 1.00,
-                                            "OptionSequence": 0,
-                                            "NetUnitPrice": 396.83333,
-                                            "LineSequence": 1,
-                                            "IsOptional": false,
-                                            "IsHidden": false,
-                                            "HideCopyAction": false,
-                                            "HasIncentives": false,
-                                            "DeltaQuantity": 1.00000,
-                                            "DeltaPrice": 396.83333,
-                                            "AutoRenew": false,
-                                            "Taxable": false,
-                                            "TaxInclusive": false,
-                                            "IsReadOnly": false,
-                                            "HideInvoiceDisplay": false,
-                                            "BillToAccountId": "0011900000hnGsrAAE",
-                                            "Operating_Expense_Formula": 0.00000,
-                                            "HasTieredPrice": false,
-                                            "TotalQuantity": 1.00000,
-                                            "IsSellingTermReadOnly": false,
-                                            "IsPrimaryRampLine": false,
-                                            "Uom": "Each",
-                                            "Term": 1,
-                                            "SyncStatus": "Synchronized",
-                                            "StartDate": "2022-02-09",
-                                            "SellingTerm": 1.00000,
-                                            "SellingFrequency": "One Time",
-                                            "RollupPriceToBundle": true,
-                                            "Quantity": 1.00000,
-                                            "ProductId": "01t1T000005BXnJQAW",
-                                            "PrimaryLineNumber": 1,
-                                            "PricingStatus": "Pending",
-                                            "PriceUom": "Each",
-                                            "PriceType": "One Time",
-                                            "PriceMethod": "Per Unit",
-                                            "PriceListItemId": "a161T000004znCMQAY",
-                                            "PriceListId": "a171T000005il1XQAQ",
-                                            "PriceIncludedInBundle": false,
-                                            "NetPrice": 396.83333,
-                                            "NetAdjustmentPercent": 0.0000,
-                                            "ListPrice": 396.8333333333333,
-                                            "LineType": "Product/Service",
-                                            "LineStatus": "New",
-                                            "LineNumber": 1,
-                                            "ItemSequence": 1,
-                                            "IsUsageTierModifiable": false,
-                                            "IsQuantityModifiable": true,
-                                            "IsPrimaryLine": true,
-                                            "IsOptionRollupLine": false,
-                                            "IsCustomPricing": false,
-                                            "IsAssetPricing": false,
-                                            "HasOptions": false,
-                                            "HasDefaults": false,
-                                            "HasBaseProduct": false,
-                                            "HasAttributes": false,
-                                            "Frequency": "One Time",
-                                            "ExtendedQuantity": 1.00000,
-                                            "ExtendedPrice": 396.8333333333333,
-                                            "EndDate": "2022-02-09",
-                                            "Description": "DL380e Gen8 Entry Level",
-                                            "Customizable": false,
-                                            "ConstraintCheckStatus": "NA",
-                                            "ConfigStatus": "NA",
-                                            "Comments": "Added by Code",
-                                            "ChargeType": "Standard Price",
-                                            "BasePrice": 396.8333333333333,
-                                            "BasePriceMethod": "Per Unit",
-                                            "BaseExtendedPrice": 396.8333333333333,
-                                            "AllowableAction": "Unrestricted",
-                                            "AllowRemoval": true,
-                                            "AllowProration": false,
-                                            "AllowManualAdjustment": true,
-                                            "AllocateGroupAdjustment": true,
-                                            "AdjustedPrice": 396.83333,
-                                            "AddedBy": "User",
-                                            "ConfigurationId": "a1I790000005WEEEA2",
-                                            "LastReferencedDate": "2022-02-10T11:03:33.000Z",
-                                            "LastViewedDate": "2022-02-10T11:03:33.000Z",
-                                            "SystemModstamp": "2022-02-10T11:03:33.000Z",
-                                            "LastModifiedById": "0052h000002AFfcAAG",
-                                            "LastModifiedDate": "2022-02-10T11:03:33.000Z",
-                                            "CreatedById": "0052h000002AFfcAAG",
-                                            "CreatedDate": "2022-02-10T11:03:33.000Z",
-                                            "CurrencyIsoCode": "USD",
-                                            "Name": "LI-0000661674",
-                                            "IsDeleted": false,
-                                            "Id": "a1379000000KDXBAA4"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "deprecated": false
-            },
             "put": {
                 "tags": [
                     "Favorites"
@@ -26487,7 +26281,7 @@
                 "tags": [
                     "Favorites"
                 ],
-                "summary": "remove favorites",
+                "summary": "Remove favorites",
                 "description": "Delete the favorite configuration based on the favorite Id passed in the path.",
                 "operationId": "RemoveFavorites",
                 "parameters": [
@@ -26659,6 +26453,307 @@
                                             "id": "a3e79000000WdL4AAK",
                                             "success": true,
                                             "errors": []
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/favorites/{favoriteId}/items": {
+            "post": {
+                "tags": [
+                    "Favorites"
+                ],
+                "summary": "Add Favorite",
+                "description": "Adds the selected products or lineitms to the favorite configuration.",
+                "operationId": "AddFavorite",
+                "parameters": [
+                    {
+                        "name": "favoriteId",
+                        "in": "path",
+                        "description": "The reference Id of the favorite.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "a3e79000000WYtUAAW"
+                        }
+                    },
+                    {
+                        "name": "x-storefront",
+                        "in": "header",
+                        "description": "The name of the storefront used for the request.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "ECommerce"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content type of the request body.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "application/json"
+                        }
+                    },
+                    {
+                        "name": "x-account",
+                        "in": "header",
+                        "description": "The account value from the header is taken as default account if passed as query parameter.",
+                        "required": false,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "0011900000hnGsr"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request body of Add Favorite. \n\nExample 1: Single product record or an array of products (if multiple). \n\n Example 2: List of lineNumbers associated with the lineitems selected to add as favorites.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object"
+                                },
+                                "properties": {
+                                    "ProductId": {
+                                        "type": "object"
+                                    },
+                                    "Quantity": {
+                                        "type": "number"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "example1": {
+                                    "summary": "Example 1",
+                                    "value": {
+                                        "ProductId": "01t4R00000J5R6i",
+                                        "Quantity": 1
+                                    }
+                                },
+                                "example2": {
+                                    "summary": "Example 2",
+                                    "value": [
+                                        2,
+                                        1
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CartItems"
+                                },
+                                "example": {
+                                    "title": "success",
+                                    "status": 200,
+                                    "data": [
+                                        {
+                                            "Product_Family": "Hardware",
+                                            "SellingUom": "Each",
+                                            "Demo_Renewal_flag": "No",
+                                            "APTS_Local_Bundle_Component_Flag": false,
+                                            "ProductVersion": 1.00,
+                                            "OptionSequence": 0,
+                                            "NetUnitPrice": 950.00000,
+                                            "LineSequence": 1,
+                                            "IsOptional": false,
+                                            "IsHidden": false,
+                                            "HideCopyAction": false,
+                                            "HasIncentives": false,
+                                            "DeltaQuantity": 1.00000,
+                                            "DeltaPrice": 950.00000,
+                                            "AutoRenew": false,
+                                            "Taxable": false,
+                                            "TaxInclusive": false,
+                                            "IsReadOnly": false,
+                                            "HideInvoiceDisplay": false,
+                                            "BillToAccountId": "0011900000hnGsrAAE",
+                                            "Operating_Expense_Formula": 0.00000,
+                                            "HasTieredPrice": false,
+                                            "TotalQuantity": 1.00000,
+                                            "IsSellingTermReadOnly": false,
+                                            "IsPrimaryRampLine": false,
+                                            "Uom": "Each",
+                                            "Term": 1,
+                                            "SyncStatus": "Synchronized",
+                                            "StartDate": "2022-03-15",
+                                            "SellingTerm": 1.00000,
+                                            "SellingFrequency": "One Time",
+                                            "RollupPriceToBundle": true,
+                                            "Quantity": 1.00000,
+                                            "ProductId": "01t01000001fE7cAAE",
+                                            "PrimaryLineNumber": 1,
+                                            "PricingStatus": "Pending",
+                                            "PriceUom": "Each",
+                                            "PriceType": "One Time",
+                                            "PriceMethod": "Per Unit",
+                                            "PriceListItemId": "a1601000000WlEtAAK",
+                                            "PriceListId": "a1701000000RMJfAAO",
+                                            "PriceIncludedInBundle": false,
+                                            "NetPrice": 950.00000,
+                                            "NetAdjustmentPercent": 0.0000,
+                                            "ListPrice": 950.00000,
+                                            "LineType": "Product/Service",
+                                            "LineStatus": "New",
+                                            "LineNumber": 1,
+                                            "ItemSequence": 1,
+                                            "IsUsageTierModifiable": false,
+                                            "IsQuantityModifiable": true,
+                                            "IsPrimaryLine": true,
+                                            "IsOptionRollupLine": false,
+                                            "IsCustomPricing": false,
+                                            "IsAssetPricing": false,
+                                            "HasOptions": false,
+                                            "HasDefaults": false,
+                                            "HasBaseProduct": false,
+                                            "HasAttributes": false,
+                                            "Frequency": "One Time",
+                                            "ExtendedQuantity": 1.00000,
+                                            "ExtendedPrice": 950.00000,
+                                            "EndDate": "2022-03-15",
+                                            "Description": "5 Year Extended Warranty",
+                                            "Customizable": false,
+                                            "ConstraintCheckStatus": "NA",
+                                            "ConfigStatus": "NA",
+                                            "Comments": "Added by Code",
+                                            "ChargeType": "Standard Price",
+                                            "BasePrice": 950.00000,
+                                            "BasePriceMethod": "Per Unit",
+                                            "BaseExtendedPrice": 950.00000,
+                                            "AllowableAction": "Unrestricted",
+                                            "AllowRemoval": true,
+                                            "AllowProration": false,
+                                            "AllowManualAdjustment": true,
+                                            "AllocateGroupAdjustment": true,
+                                            "AdjustedPrice": 950.00000,
+                                            "AddedBy": "User",
+                                            "ConfigurationId": "a1I010000011G3XEAU",
+                                            "LastReferencedDate": "2022-03-15T07:25:45.000Z",
+                                            "LastViewedDate": "2022-03-15T07:25:45.000Z",
+                                            "SystemModstamp": "2022-03-15T07:25:45.000Z",
+                                            "LastModifiedById": "00501000001qQDtAAM",
+                                            "LastModifiedDate": "2022-03-15T07:25:45.000Z",
+                                            "CreatedById": "00501000001qQDtAAM",
+                                            "CreatedDate": "2022-03-15T07:25:45.000Z",
+                                            "CurrencyIsoCode": "USD",
+                                            "Name": "LI-0000438478",
+                                            "IsDeleted": false,
+                                            "Id": "a1301000000bpswAAA"
+                                        },
+                                        {
+                                            "Product_Family": "Hardware",
+                                            "Demo_Renewal_flag": "No",
+                                            "APTS_Local_Bundle_Component_Flag": false,
+                                            "ProductVersion": 1.00,
+                                            "OptionSequence": 0,
+                                            "NetUnitPrice": 800.00000,
+                                            "LineSequence": 2,
+                                            "IsOptional": false,
+                                            "IsHidden": false,
+                                            "HideCopyAction": false,
+                                            "HasIncentives": false,
+                                            "DeltaQuantity": 1.00000,
+                                            "DeltaPrice": 800.00000,
+                                            "AutoRenew": false,
+                                            "Taxable": false,
+                                            "TaxInclusive": false,
+                                            "IsReadOnly": false,
+                                            "HideInvoiceDisplay": false,
+                                            "BillToAccountId": "0011900000hnGsrAAE",
+                                            "Operating_Expense_Formula": 0.00000,
+                                            "HasTieredPrice": false,
+                                            "TotalQuantity": 1.00000,
+                                            "IsSellingTermReadOnly": false,
+                                            "IsPrimaryRampLine": false,
+                                            "Uom": "Each",
+                                            "Term": 1,
+                                            "SyncStatus": "Synchronized",
+                                            "StartDate": "2022-03-15",
+                                            "SellingTerm": 1.00000,
+                                            "SellingFrequency": "One Time",
+                                            "RollupPriceToBundle": true,
+                                            "Quantity": 1.00000,
+                                            "ProductId": "01t01000001fE3gAAE",
+                                            "PrimaryLineNumber": 2,
+                                            "PricingStatus": "Pending",
+                                            "PriceType": "One Time",
+                                            "PriceMethod": "Per Unit",
+                                            "PriceListItemId": "a1601000000WlGvAAK",
+                                            "PriceListId": "a1701000000RMJfAAO",
+                                            "PriceIncludedInBundle": false,
+                                            "NetPrice": 800.00000,
+                                            "NetAdjustmentPercent": 0.0000,
+                                            "ListPrice": 800.00000,
+                                            "LineType": "Product/Service",
+                                            "LineStatus": "New",
+                                            "LineNumber": 2,
+                                            "ItemSequence": 1,
+                                            "IsUsageTierModifiable": false,
+                                            "IsQuantityModifiable": true,
+                                            "IsPrimaryLine": true,
+                                            "IsOptionRollupLine": false,
+                                            "IsCustomPricing": false,
+                                            "IsAssetPricing": false,
+                                            "HasOptions": false,
+                                            "HasDefaults": false,
+                                            "HasBaseProduct": false,
+                                            "HasAttributes": true,
+                                            "Frequency": "One Time",
+                                            "ExtendedQuantity": 1.00000,
+                                            "ExtendedPrice": 800.00000,
+                                            "EndDate": "2022-03-15",
+                                            "Description": "Acer Aspire 5",
+                                            "Customizable": false,
+                                            "ConstraintCheckStatus": "NA",
+                                            "ConfigStatus": "NA",
+                                            "Comments": "Added by Code",
+                                            "ChargeType": "Standard Price",
+                                            "BasePrice": 800.00000,
+                                            "BasePriceMethod": "Per Unit",
+                                            "BaseExtendedPrice": 800.00000,
+                                            "AttributeValueId": "a1F010000029Yx3EAE",
+                                            "AllowableAction": "Unrestricted",
+                                            "AllowRemoval": true,
+                                            "AllowProration": false,
+                                            "AllowManualAdjustment": true,
+                                            "AllocateGroupAdjustment": true,
+                                            "AdjustedPrice": 800.00000,
+                                            "AddedBy": "User",
+                                            "ConfigurationId": "a1I010000011G3XEAU",
+                                            "LastReferencedDate": "2022-03-15T07:25:47.000Z",
+                                            "LastViewedDate": "2022-03-15T07:25:47.000Z",
+                                            "SystemModstamp": "2022-03-15T07:25:47.000Z",
+                                            "LastModifiedById": "00501000001qQDtAAM",
+                                            "LastModifiedDate": "2022-03-15T07:25:47.000Z",
+                                            "CreatedById": "00501000001qQDtAAM",
+                                            "CreatedDate": "2022-03-15T07:25:45.000Z",
+                                            "CurrencyIsoCode": "USD",
+                                            "Name": "LI-0000438479",
+                                            "IsDeleted": false,
+                                            "Id": "a1301000000bpsxAAA"
                                         }
                                     ]
                                 }
@@ -37307,6 +37402,684 @@
                 "deprecated": false
             }
         },
+        "/assets/{assetId}/suspend": {
+            "post": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Suspend Asset",
+                "operationId": "SuspendAsset",
+                "description": "Invoke this API for suspending active assets.",
+                "parameters": [
+                    {
+                        "name": "cartId",
+                        "in": "path",
+                        "description": "The Id of the current active cart.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "type": "string",
+                            "example": "a0e3I000000ERLmQAO"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authentication token.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "type": "string",
+                            "example": "00DG0000000iqtB!ARUAQHofFrVurFKWS8TcFKmhFM1yiA1VBzEVVAOXDB.5r_rlpxXuj53RnqfY2QKUgsL3N.ge5kmSPN5UcHK9iHckog6eTw.4"
+                        }
+                    },
+                    {
+                        "name": "x-storefront",
+                        "in": "header",
+                        "description": "The name of the storefront used for the request.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "type": "string",
+                            "example": "ECommerce"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content type of the request body.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "application/json"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "The startDate & assetIds are required, rest are optional in the request payload.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "StartDate": {
+                                        "type": "string"
+                                    },
+                                    "EndDate": {
+                                        "type": "string"
+                                    },
+                                    "Term": {
+                                        "type": "string"
+                                    },
+                                    "assetIds": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "CustomData": {
+                                        "type": "object",
+                                        "properties": {
+                                            "ABOText__c": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "example": {
+                                "StartDate": "2021-11-18",
+                                "EndDate": "2021-11-19",
+                                "Term": "1",
+                                "assetIds": [
+                                    "a0e2i000001cz85"
+                                ],
+                                "CustomData": {
+                                    "ABOText__c": "RestAPI"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Asset"
+                                },
+                                "example": {
+                                    "title": "success",
+                                    "status": 200,
+                                    "data": {
+                                        "a0e2i000001cz85AAA": {
+                                            "attributes": {
+                                                "type": "Apttus_Config2__LineItem__c",
+                                                "url": "/services/data/v53.0/sobjects/Apttus_Config2__LineItem__c/a132i000000sGAEAA2"
+                                            },
+                                            "Apttus_Config2__ConfigurationId__c": "a1I2i0000012DlwEAE",
+                                            "Apttus_Config2__BaseProductId__c": null,
+                                            "Apttus_Config2__HasBaseProduct__c": false,
+                                            "Apttus_Config2__LocationId__c": null,
+                                            "Apttus_Config2__Uom__c": "Each",
+                                            "Apttus_Config2__Quantity__c": 1,
+                                            "Apttus_Config2__Term__c": 1,
+                                            "Apttus_Config2__SellingTerm__c": 0.06667,
+                                            "Apttus_Config2__ProductId__c": "01t3C000002RlNuQAK",
+                                            "Apttus_Config2__PriceListId__c": "a173C000000fHFQQA2",
+                                            "Apttus_Config2__LineType__c": "Product/Service",
+                                            "Apttus_Config2__LineNumber__c": 1,
+                                            "Apttus_Config2__LineSequence__c": 1,
+                                            "Apttus_Config2__PrimaryLineNumber__c": 1,
+                                            "Apttus_Config2__ItemSequence__c": 1,
+                                            "Apttus_Config2__OptionSequence__c": 0,
+                                            "Apttus_Config2__IsQuantityModifiable__c": true,
+                                            "Apttus_Config2__IsPrimaryLine__c": true,
+                                            "Apttus_Config2__ProductVersion__c": 1,
+                                            "Apttus_Config2__Comments__c": null,
+                                            "Apttus_Config2__AdjustmentAmount__c": null,
+                                            "Apttus_Config2__AdjustmentType__c": null,
+                                            "Apttus_Config2__AssetLineItemId__c": "a0e2i000001cz85AAA",
+                                            "Apttus_Config2__Description__c": "100+ administration services",
+                                            "Apttus_Config2__Customizable__c": false,
+                                            "Apttus_Config2__PricingStatus__c": "Complete",
+                                            "Apttus_Config2__ConfigStatus__c": "NA",
+                                            "Apttus_Config2__ConstraintCheckStatus__c": "Complete",
+                                            "Apttus_Config2__AllowManualAdjustment__c": true,
+                                            "Apttus_Config2__HasAttributes__c": false,
+                                            "Apttus_Config2__HasDefaults__c": false,
+                                            "Apttus_Config2__HasOptions__c": false,
+                                            "Apttus_Config2__BillingPreferenceId__r": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__BillingPreference__c",
+                                                    "url": "/services/data/v53.0/sobjects/Apttus_Config2__BillingPreference__c/a2d2f0000000h0YAAQ"
+                                                },
+                                                "Id": "a2d2f0000000h0YAAQ",
+                                                "Apttus_Config2__BillingCycleStart__c": "Period Start Date",
+                                                "Apttus_Config2__BillingDayOfMonth2__c": "15th of the Month"
+                                            },
+                                            "Apttus_Config2__BillToAccountId__r": {
+                                                "attributes": {
+                                                    "type": "Account",
+                                                    "url": "/services/data/v53.0/sobjects/Account/0012i00000cbwduAAA"
+                                                },
+                                                "Id": "0012i00000cbwduAAA",
+                                                "Apttus_Config2__BillingDayOfMonth__c": "1st of the Month"
+                                            },
+                                            "Apttus_Config2__AssetLineItemId__r": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__AssetLineItem__c",
+                                                    "url": "/services/data/v53.0/sobjects/Apttus_Config2__AssetLineItem__c/a0e2i000001cz85AAA"
+                                                },
+                                                "Id": "a0e2i000001cz85AAA",
+                                                "Name": "100+ administration services",
+                                                "Apttus_Config2__AccountId__c": "0012i00000cbwduAAA",
+                                                "Apttus_Config2__AdjustedPrice__c": 5,
+                                                "Apttus_Config2__AssetStatus__c": "Activated",
+                                                "Apttus_Config2__BaseCost__c": 0.5,
+                                                "Apttus_Config2__BaseExtendedCost__c": 0.5,
+                                                "Apttus_Config2__BaseExtendedPrice__c": 5,
+                                                "Apttus_Config2__BasePriceMethod__c": "Per Unit",
+                                                "Apttus_Config2__BasePrice__c": 5,
+                                                "Apttus_Config2__BusinessLineItemId__c": "a2k2i000000sepcAAA",
+                                                "Apttus_Config2__BusinessObjectId__c": "a2n2i000000qAJiAAM",
+                                                "Apttus_Config2__BusinessObjectType__c": "Apttus_Config2__Order__c",
+                                                "Apttus_Config2__ChargeType__c": "Subscription Fee",
+                                                "Apttus_Config2__Description__c": "100+ administration services",
+                                                "Apttus_Config2__EndDate__c": "2022-11-30",
+                                                "Apttus_Config2__ExtendedCost__c": 0.5,
+                                                "Apttus_Config2__ExtendedPrice__c": 5,
+                                                "Apttus_Config2__Frequency__c": "Monthly",
+                                                "Apttus_Config2__IsOptionRollupLine__c": false,
+                                                "Apttus_Config2__IsPrimaryLine__c": true,
+                                                "Apttus_Config2__ItemSequence__c": 1,
+                                                "Apttus_Config2__LineNumber__c": 1,
+                                                "Apttus_Config2__LineType__c": "Product/Service",
+                                                "Apttus_Config2__ListPrice__c": 5,
+                                                "Apttus_Config2__MustUpgrade__c": false,
+                                                "Apttus_Config2__NetPrice__c": 5,
+                                                "Apttus_Config2__PriceIncludedInBundle__c": false,
+                                                "Apttus_Config2__PriceType__c": "Recurring",
+                                                "Apttus_Config2__ProductId__c": "01t3C000002RlNuQAK",
+                                                "Apttus_Config2__Quantity__c": 1,
+                                                "Apttus_Config2__SellingFrequency__c": "Monthly",
+                                                "Apttus_Config2__SellingTerm__c": 1,
+                                                "Apttus_Config2__StartDate__c": "2021-11-18",
+                                                "Apttus_Config2__IsPrimaryRampLine__c": false,
+                                                "Apttus_Config2__IsUsageTierModifiable__c": false,
+                                                "Apttus_Config2__HasAttributes__c": false,
+                                                "Apttus_Config2__HasOptions__c": false,
+                                                "Apttus_Config2__IsInactive__c": false,
+                                                "Apttus_Config2__IsReadOnly__c": false,
+                                                "Apttus_Config2__PriceListId__c": "a173C000000fHFQQA2",
+                                                "Apttus_Config2__PriceListItemId__c": "a163C000000njT6QAI",
+                                                "Apttus_Config2__PriceMethod__c": "Per Unit",
+                                                "Apttus_Config2__PriceUom__c": "Each",
+                                                "Apttus_Config2__Term__c": 1,
+                                                "Apttus_Config2__BillToAccountId__c": "0012i00000cbwduAAA",
+                                                "Apttus_Config2__BillingEndDate__c": "2021-11-19",
+                                                "Apttus_Config2__BillingFrequency__c": "Monthly",
+                                                "Apttus_Config2__BillingPreferenceId__c": "a2d2f0000000h0YAAQ",
+                                                "Apttus_Config2__BillingRule__c": "Bill In Advance",
+                                                "Apttus_Config2__BillingStartDate__c": "2021-11-18",
+                                                "Apttus_Config2__HideInvoiceDisplay__c": false,
+                                                "Apttus_Config2__ShipToAccountId__c": "0012i00000cbwduAAA",
+                                                "Apttus_Config2__TaxInclusive__c": false,
+                                                "Apttus_Config2__Taxable__c": false,
+                                                "Apttus_Config2__AssetTCV__c": 5,
+                                                "Apttus_Config2__AutoRenew__c": false,
+                                                "Apttus_Config2__DeltaPrice__c": 5,
+                                                "Apttus_Config2__DeltaQuantity__c": 1,
+                                                "Apttus_Config2__IsRenewed__c": false,
+                                                "Apttus_Config2__NetUnitPrice__c": 5,
+                                                "Apttus_Config2__OriginalStartDate__c": "2021-11-18",
+                                                "Apttus_Config2__PrimaryLineNumber__c": 1,
+                                                "Apttus_Config2__RenewalFrequency__c": "Monthly",
+                                                "Apttus_Config2__IsRenewalPending__c": true,
+                                                "Apttus_Config2__NextRenewEndDate__c": "2022-12-31",
+                                                "Apttus_Config2__AvailableBalance__c": 5,
+                                                "Apttus_Config2__TotalBalance__c": 5,
+                                                "Apttus_Config2__SellingUom__c": "Each",
+                                                "Apttus_Config2__CurrentContractStartDate__c": "2021-11-18",
+                                                "Apttus_Config2__CurrentContractTerm__c": 1,
+                                                "Apttus_Config2__CurrentContractValue__c": 5,
+                                                "Apttus_Config2__IsPrimaryService__c": false,
+                                                "Tier1__c": "Imaging",
+                                                "Tier2__c": "SCAN",
+                                                "OEM_Manufacturer__c": "IBM",
+                                                "Apttus_Config2__CurrentContractUnitPrice__c": 5,
+                                                "LA_Currency__c": "USD",
+                                                "Implementation_Partner__c": "SiX systems",
+                                                "Link__c": "<a href=\"/a0e2i000001cz85\" target=\"_self\">Link</a>",
+                                                "ABO_HyperLink__c": "<a href=\"/a0e2i000001cz85\" target=\"_self\">Link</a>",
+                                                "ABO_Picklist__c": "YELLOW",
+                                                "ABOText__c": "Hello Test1234",
+                                                "ABOCurrency__c": 87654321,
+                                                "Apttus_Config2__RenewalLineItemId__c": "a132i000000rwOuAAI",
+                                                "ABONumber__c": 1234567,
+                                                "Product_Description__c": "100+ administration services",
+                                                "Apttus_Config2__ProductId__r": {
+                                                    "attributes": {
+                                                        "type": "Product2",
+                                                        "url": "/services/data/v53.0/sobjects/Product2/01t3C000002RlNuQAK"
+                                                    },
+                                                    "Id": "01t3C000002RlNuQAK"
+                                                },
+                                                "Apttus_Config2__BillingPreferenceId__r": {
+                                                    "attributes": {
+                                                        "type": "Apttus_Config2__BillingPreference__c",
+                                                        "url": "/services/data/v53.0/sobjects/Apttus_Config2__BillingPreference__c/a2d2f0000000h0YAAQ"
+                                                    },
+                                                    "Id": "a2d2f0000000h0YAAQ",
+                                                    "Apttus_Config2__BillingCycleStart__c": "Period Start Date",
+                                                    "Apttus_Config2__BillingDayOfMonth2__c": "15th of the Month"
+                                                },
+                                                "Apttus_Config2__BillToAccountId__r": {
+                                                    "attributes": {
+                                                        "type": "Account",
+                                                        "url": "/services/data/v53.0/sobjects/Account/0012i00000cbwduAAA"
+                                                    },
+                                                    "Id": "0012i00000cbwduAAA",
+                                                    "Apttus_Config2__BillingDayOfMonth__c": "1st of the Month"
+                                                }
+                                            },
+                                            "Apttus_Config2__AssetQuantity__c": 1,
+                                            "Apttus_Config2__AutoRenewalTerm__c": null,
+                                            "Apttus_Config2__AdjustedPrice__c": 5,
+                                            "Apttus_Config2__BaseCost__c": 0.5,
+                                            "Apttus_Config2__BaseExtendedCost__c": 0.5,
+                                            "Apttus_Config2__BaseExtendedPrice__c": 5,
+                                            "Apttus_Config2__BasePriceMethod__c": "Per Unit",
+                                            "Apttus_Config2__BasePrice__c": 5,
+                                            "Apttus_Config2__ChargeType__c": "Subscription Fee",
+                                            "Apttus_Config2__EndDate__c": "2021-11-19",
+                                            "Apttus_Config2__ExtendedCost__c": 0.5,
+                                            "Apttus_Config2__ExtendedPrice__c": 5,
+                                            "Apttus_Config2__Frequency__c": "Monthly",
+                                            "Apttus_Config2__IsOptionRollupLine__c": false,
+                                            "Apttus_Config2__IsUsageTierModifiable__c": false,
+                                            "Apttus_Config2__ListPrice__c": 5,
+                                            "Apttus_Config2__NetPrice__c": 5,
+                                            "Apttus_Config2__PriceIncludedInBundle__c": false,
+                                            "Apttus_Config2__PriceListItemId__c": "a163C000000njT6QAI",
+                                            "Apttus_Config2__PriceMethod__c": "Per Unit",
+                                            "Apttus_Config2__PriceType__c": "Recurring",
+                                            "Apttus_Config2__PriceUom__c": "Each",
+                                            "Apttus_Config2__SellingFrequency__c": "Monthly",
+                                            "Apttus_Config2__StartDate__c": "2021-11-18",
+                                            "Apttus_Config2__IsPrimaryRampLine__c": false,
+                                            "Apttus_Config2__BillToAccountId__c": "0012i00000cbwduAAA",
+                                            "Apttus_Config2__BillingFrequency__c": "Monthly",
+                                            "Apttus_Config2__BillingPreferenceId__c": "a2d2f0000000h0YAAQ",
+                                            "Apttus_Config2__BillingRule__c": "Bill In Advance",
+                                            "Apttus_Config2__HideInvoiceDisplay__c": false,
+                                            "Apttus_Config2__IsReadOnly__c": false,
+                                            "Apttus_Config2__ShipToAccountId__c": "0012i00000cbwduAAA",
+                                            "Apttus_Config2__TaxInclusive__c": false,
+                                            "Apttus_Config2__Taxable__c": false,
+                                            "Apttus_Config2__AutoRenew__c": false,
+                                            "Apttus_Config2__DeltaQuantity__c": 1,
+                                            "Apttus_Config2__NetUnitPrice__c": 5,
+                                            "Apttus_Config2__SellingUom__c": "Each",
+                                            "Tier1__c": "Imaging",
+                                            "Tier2__c": "SCAN",
+                                            "OEM_Manufacturer__c": "IBM",
+                                            "Implementation_Partner__c": "SiX systems",
+                                            "ABO_Picklist__c": "YELLOW",
+                                            "ABOText__c": "RestAPI",
+                                            "ABOCurrency__c": 87654321,
+                                            "ABONumber__c": 1234567,
+                                            "Apttus_Config2__AllowProration__c": true,
+                                            "Apttus_Config2__AttributeValueId__c": null,
+                                            "Id": "a132i000000sGAEAA2",
+                                            "Apttus_Config2__LineStatus__c": "Suspended"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/assets/{assetId}/resume": {
+            "post": {
+                "tags": [
+                    "Assets"
+                ],
+                "summary": "Resume Asset",
+                "operationId": "ResumeAsset",
+                "description": "Invoke this API for resuming or activating suspended assets.",
+                "parameters": [
+                    {
+                        "name": "cartId",
+                        "in": "path",
+                        "description": "The Id of the current active cart.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "type": "string",
+                            "example": "a0e3I000000ERLmQAO"
+                        }
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authentication token.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "type": "string",
+                            "example": "00DG0000000iqtB!ARUAQHofFrVurFKWS8TcFKmhFM1yiA1VBzEVVAOXDB.5r_rlpxXuj53RnqfY2QKUgsL3N.ge5kmSPN5UcHK9iHckog6eTw.4"
+                        }
+                    },
+                    {
+                        "name": "x-storefront",
+                        "in": "header",
+                        "description": "The name of the storefront used for the request.",
+                        "required": true,
+                        "style": "simple",
+                        "schema": {
+                            "type": "string",
+                            "example": "ECommerce"
+                        }
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content type of the request body.",
+                        "required": true,
+                        "style": "simple",
+                        "explode": false,
+                        "schema": {
+                            "type": "string",
+                            "example": "application/json"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "The assetIds is required, rest are optional in the request payload.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "assetIds": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "CustomData": {
+                                        "type": "object",
+                                        "properties": {
+                                            "ABOText__c": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "example": {
+                                "assetIds": [
+                                    "a1IW0000001ZeAVMA0"
+                                ],
+                                "CustomData": {
+                                    "ABOText__c": "comment value"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Asset"
+                                },
+                                "example": {
+                                    "title": "success",
+                                    "status": 200,
+                                    "data": {
+                                        "a0e2i000001cz85AAA": {
+                                            "attributes": {
+                                                "type": "Apttus_Config2__LineItem__c",
+                                                "url": "/services/data/v53.0/sobjects/Apttus_Config2__LineItem__c/a132i000000sGAEAA2"
+                                            },
+                                            "Apttus_Config2__ConfigurationId__c": "a1I2i0000012DlwEAE",
+                                            "Apttus_Config2__BaseProductId__c": null,
+                                            "Apttus_Config2__HasBaseProduct__c": false,
+                                            "Apttus_Config2__LocationId__c": null,
+                                            "Apttus_Config2__Uom__c": "Each",
+                                            "Apttus_Config2__Quantity__c": 1,
+                                            "Apttus_Config2__Term__c": 1,
+                                            "Apttus_Config2__SellingTerm__c": 0.06667,
+                                            "Apttus_Config2__ProductId__c": "01t3C000002RlNuQAK",
+                                            "Apttus_Config2__PriceListId__c": "a173C000000fHFQQA2",
+                                            "Apttus_Config2__LineType__c": "Product/Service",
+                                            "Apttus_Config2__LineNumber__c": 1,
+                                            "Apttus_Config2__LineSequence__c": 1,
+                                            "Apttus_Config2__PrimaryLineNumber__c": 1,
+                                            "Apttus_Config2__ItemSequence__c": 1,
+                                            "Apttus_Config2__OptionSequence__c": 0,
+                                            "Apttus_Config2__IsQuantityModifiable__c": true,
+                                            "Apttus_Config2__IsPrimaryLine__c": true,
+                                            "Apttus_Config2__ProductVersion__c": 1,
+                                            "Apttus_Config2__Comments__c": null,
+                                            "Apttus_Config2__AdjustmentAmount__c": null,
+                                            "Apttus_Config2__AdjustmentType__c": null,
+                                            "Apttus_Config2__AssetLineItemId__c": "a0e2i000001cz85AAA",
+                                            "Apttus_Config2__Description__c": "100+ administration services",
+                                            "Apttus_Config2__Customizable__c": false,
+                                            "Apttus_Config2__PricingStatus__c": "Complete",
+                                            "Apttus_Config2__ConfigStatus__c": "NA",
+                                            "Apttus_Config2__ConstraintCheckStatus__c": "Complete",
+                                            "Apttus_Config2__AllowManualAdjustment__c": true,
+                                            "Apttus_Config2__HasAttributes__c": false,
+                                            "Apttus_Config2__HasDefaults__c": false,
+                                            "Apttus_Config2__HasOptions__c": false,
+                                            "Apttus_Config2__BillingPreferenceId__r": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__BillingPreference__c",
+                                                    "url": "/services/data/v53.0/sobjects/Apttus_Config2__BillingPreference__c/a2d2f0000000h0YAAQ"
+                                                },
+                                                "Id": "a2d2f0000000h0YAAQ",
+                                                "Apttus_Config2__BillingCycleStart__c": "Period Start Date",
+                                                "Apttus_Config2__BillingDayOfMonth2__c": "15th of the Month"
+                                            },
+                                            "Apttus_Config2__BillToAccountId__r": {
+                                                "attributes": {
+                                                    "type": "Account",
+                                                    "url": "/services/data/v53.0/sobjects/Account/0012i00000cbwduAAA"
+                                                },
+                                                "Id": "0012i00000cbwduAAA",
+                                                "Apttus_Config2__BillingDayOfMonth__c": "1st of the Month"
+                                            },
+                                            "Apttus_Config2__AssetLineItemId__r": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__AssetLineItem__c",
+                                                    "url": "/services/data/v53.0/sobjects/Apttus_Config2__AssetLineItem__c/a0e2i000001cz85AAA"
+                                                },
+                                                "Id": "a0e2i000001cz85AAA",
+                                                "Name": "100+ administration services",
+                                                "Apttus_Config2__AccountId__c": "0012i00000cbwduAAA",
+                                                "Apttus_Config2__AdjustedPrice__c": 5,
+                                                "Apttus_Config2__AssetStatus__c": "Activated",
+                                                "Apttus_Config2__BaseCost__c": 0.5,
+                                                "Apttus_Config2__BaseExtendedCost__c": 0.5,
+                                                "Apttus_Config2__BaseExtendedPrice__c": 5,
+                                                "Apttus_Config2__BasePriceMethod__c": "Per Unit",
+                                                "Apttus_Config2__BasePrice__c": 5,
+                                                "Apttus_Config2__BusinessLineItemId__c": "a2k2i000000sepcAAA",
+                                                "Apttus_Config2__BusinessObjectId__c": "a2n2i000000qAJiAAM",
+                                                "Apttus_Config2__BusinessObjectType__c": "Apttus_Config2__Order__c",
+                                                "Apttus_Config2__ChargeType__c": "Subscription Fee",
+                                                "Apttus_Config2__Description__c": "100+ administration services",
+                                                "Apttus_Config2__EndDate__c": "2022-11-30",
+                                                "Apttus_Config2__ExtendedCost__c": 0.5,
+                                                "Apttus_Config2__ExtendedPrice__c": 5,
+                                                "Apttus_Config2__Frequency__c": "Monthly",
+                                                "Apttus_Config2__IsOptionRollupLine__c": false,
+                                                "Apttus_Config2__IsPrimaryLine__c": true,
+                                                "Apttus_Config2__ItemSequence__c": 1,
+                                                "Apttus_Config2__LineNumber__c": 1,
+                                                "Apttus_Config2__LineType__c": "Product/Service",
+                                                "Apttus_Config2__ListPrice__c": 5,
+                                                "Apttus_Config2__MustUpgrade__c": false,
+                                                "Apttus_Config2__NetPrice__c": 5,
+                                                "Apttus_Config2__PriceIncludedInBundle__c": false,
+                                                "Apttus_Config2__PriceType__c": "Recurring",
+                                                "Apttus_Config2__ProductId__c": "01t3C000002RlNuQAK",
+                                                "Apttus_Config2__Quantity__c": 1,
+                                                "Apttus_Config2__SellingFrequency__c": "Monthly",
+                                                "Apttus_Config2__SellingTerm__c": 1,
+                                                "Apttus_Config2__StartDate__c": "2021-11-18",
+                                                "Apttus_Config2__IsPrimaryRampLine__c": false,
+                                                "Apttus_Config2__IsUsageTierModifiable__c": false,
+                                                "Apttus_Config2__HasAttributes__c": false,
+                                                "Apttus_Config2__HasOptions__c": false,
+                                                "Apttus_Config2__IsInactive__c": false,
+                                                "Apttus_Config2__IsReadOnly__c": false,
+                                                "Apttus_Config2__PriceListId__c": "a173C000000fHFQQA2",
+                                                "Apttus_Config2__PriceListItemId__c": "a163C000000njT6QAI",
+                                                "Apttus_Config2__PriceMethod__c": "Per Unit",
+                                                "Apttus_Config2__PriceUom__c": "Each",
+                                                "Apttus_Config2__Term__c": 1,
+                                                "Apttus_Config2__BillToAccountId__c": "0012i00000cbwduAAA",
+                                                "Apttus_Config2__BillingEndDate__c": "2021-11-19",
+                                                "Apttus_Config2__BillingFrequency__c": "Monthly",
+                                                "Apttus_Config2__BillingPreferenceId__c": "a2d2f0000000h0YAAQ",
+                                                "Apttus_Config2__BillingRule__c": "Bill In Advance",
+                                                "Apttus_Config2__BillingStartDate__c": "2021-11-18",
+                                                "Apttus_Config2__HideInvoiceDisplay__c": false,
+                                                "Apttus_Config2__ShipToAccountId__c": "0012i00000cbwduAAA",
+                                                "Apttus_Config2__TaxInclusive__c": false,
+                                                "Apttus_Config2__Taxable__c": false,
+                                                "Apttus_Config2__AssetTCV__c": 5,
+                                                "Apttus_Config2__AutoRenew__c": false,
+                                                "Apttus_Config2__DeltaPrice__c": 5,
+                                                "Apttus_Config2__DeltaQuantity__c": 1,
+                                                "Apttus_Config2__IsRenewed__c": false,
+                                                "Apttus_Config2__NetUnitPrice__c": 5,
+                                                "Apttus_Config2__OriginalStartDate__c": "2021-11-18",
+                                                "Apttus_Config2__PrimaryLineNumber__c": 1,
+                                                "Apttus_Config2__RenewalFrequency__c": "Monthly",
+                                                "Apttus_Config2__IsRenewalPending__c": true,
+                                                "Apttus_Config2__NextRenewEndDate__c": "2022-12-31",
+                                                "Apttus_Config2__AvailableBalance__c": 5,
+                                                "Apttus_Config2__TotalBalance__c": 5,
+                                                "Apttus_Config2__SellingUom__c": "Each",
+                                                "Apttus_Config2__CurrentContractStartDate__c": "2021-11-18",
+                                                "Apttus_Config2__CurrentContractTerm__c": 1,
+                                                "Apttus_Config2__CurrentContractValue__c": 5,
+                                                "Apttus_Config2__IsPrimaryService__c": false,
+                                                "Tier1__c": "Imaging",
+                                                "Tier2__c": "SCAN",
+                                                "OEM_Manufacturer__c": "IBM",
+                                                "Apttus_Config2__CurrentContractUnitPrice__c": 5,
+                                                "LA_Currency__c": "USD",
+                                                "Implementation_Partner__c": "SiX systems",
+                                                "Link__c": "<a href=\"/a0e2i000001cz85\" target=\"_self\">Link</a>",
+                                                "ABO_HyperLink__c": "<a href=\"/a0e2i000001cz85\" target=\"_self\">Link</a>",
+                                                "ABO_Picklist__c": "YELLOW",
+                                                "ABOText__c": "Hello Test1234",
+                                                "ABOCurrency__c": 87654321,
+                                                "Apttus_Config2__RenewalLineItemId__c": "a132i000000rwOuAAI",
+                                                "ABONumber__c": 1234567,
+                                                "Product_Description__c": "100+ administration services",
+                                                "Apttus_Config2__ProductId__r": {
+                                                    "attributes": {
+                                                        "type": "Product2",
+                                                        "url": "/services/data/v53.0/sobjects/Product2/01t3C000002RlNuQAK"
+                                                    },
+                                                    "Id": "01t3C000002RlNuQAK"
+                                                },
+                                                "Apttus_Config2__BillingPreferenceId__r": {
+                                                    "attributes": {
+                                                        "type": "Apttus_Config2__BillingPreference__c",
+                                                        "url": "/services/data/v53.0/sobjects/Apttus_Config2__BillingPreference__c/a2d2f0000000h0YAAQ"
+                                                    },
+                                                    "Id": "a2d2f0000000h0YAAQ",
+                                                    "Apttus_Config2__BillingCycleStart__c": "Period Start Date",
+                                                    "Apttus_Config2__BillingDayOfMonth2__c": "15th of the Month"
+                                                },
+                                                "Apttus_Config2__BillToAccountId__r": {
+                                                    "attributes": {
+                                                        "type": "Account",
+                                                        "url": "/services/data/v53.0/sobjects/Account/0012i00000cbwduAAA"
+                                                    },
+                                                    "Id": "0012i00000cbwduAAA",
+                                                    "Apttus_Config2__BillingDayOfMonth__c": "1st of the Month"
+                                                }
+                                            },
+                                            "Apttus_Config2__AssetQuantity__c": 1,
+                                            "Apttus_Config2__AutoRenewalTerm__c": null,
+                                            "Apttus_Config2__AdjustedPrice__c": 5,
+                                            "Apttus_Config2__BaseCost__c": 0.5,
+                                            "Apttus_Config2__BaseExtendedCost__c": 0.5,
+                                            "Apttus_Config2__BaseExtendedPrice__c": 5,
+                                            "Apttus_Config2__BasePriceMethod__c": "Per Unit",
+                                            "Apttus_Config2__BasePrice__c": 5,
+                                            "Apttus_Config2__ChargeType__c": "Subscription Fee",
+                                            "Apttus_Config2__EndDate__c": "2021-11-19",
+                                            "Apttus_Config2__ExtendedCost__c": 0.5,
+                                            "Apttus_Config2__ExtendedPrice__c": 5,
+                                            "Apttus_Config2__Frequency__c": "Monthly",
+                                            "Apttus_Config2__IsOptionRollupLine__c": false,
+                                            "Apttus_Config2__IsUsageTierModifiable__c": false,
+                                            "Apttus_Config2__ListPrice__c": 5,
+                                            "Apttus_Config2__NetPrice__c": 5,
+                                            "Apttus_Config2__PriceIncludedInBundle__c": false,
+                                            "Apttus_Config2__PriceListItemId__c": "a163C000000njT6QAI",
+                                            "Apttus_Config2__PriceMethod__c": "Per Unit",
+                                            "Apttus_Config2__PriceType__c": "Recurring",
+                                            "Apttus_Config2__PriceUom__c": "Each",
+                                            "Apttus_Config2__SellingFrequency__c": "Monthly",
+                                            "Apttus_Config2__StartDate__c": "2021-11-18",
+                                            "Apttus_Config2__IsPrimaryRampLine__c": false,
+                                            "Apttus_Config2__BillToAccountId__c": "0012i00000cbwduAAA",
+                                            "Apttus_Config2__BillingFrequency__c": "Monthly",
+                                            "Apttus_Config2__BillingPreferenceId__c": "a2d2f0000000h0YAAQ",
+                                            "Apttus_Config2__BillingRule__c": "Bill In Advance",
+                                            "Apttus_Config2__HideInvoiceDisplay__c": false,
+                                            "Apttus_Config2__IsReadOnly__c": false,
+                                            "Apttus_Config2__ShipToAccountId__c": "0012i00000cbwduAAA",
+                                            "Apttus_Config2__TaxInclusive__c": false,
+                                            "Apttus_Config2__Taxable__c": false,
+                                            "Apttus_Config2__AutoRenew__c": false,
+                                            "Apttus_Config2__DeltaQuantity__c": 1,
+                                            "Apttus_Config2__NetUnitPrice__c": 5,
+                                            "Apttus_Config2__SellingUom__c": "Each",
+                                            "Tier1__c": "Imaging",
+                                            "Tier2__c": "SCAN",
+                                            "OEM_Manufacturer__c": "IBM",
+                                            "Implementation_Partner__c": "SiX systems",
+                                            "ABO_Picklist__c": "YELLOW",
+                                            "ABOText__c": "RestAPI",
+                                            "ABOCurrency__c": 87654321,
+                                            "ABONumber__c": 1234567,
+                                            "Apttus_Config2__AllowProration__c": true,
+                                            "Apttus_Config2__AttributeValueId__c": null,
+                                            "Id": "a132i000000sGAEAA2",
+                                            "Apttus_Config2__LineStatus__c": "Resumed"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        },
         "/collaborationrequests": {
             "post": {
                 "tags": [
@@ -39242,7 +40015,7 @@
                             "Apttus_Config2__FieldName__c": {
                                 "type": "string"
                             },
-                            "Id":  {
+                            "Id": {
                                 "type": "string"
                             }
                         }
