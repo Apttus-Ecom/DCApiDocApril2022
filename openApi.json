@@ -26276,88 +26276,6 @@
                     }
                 },
                 "deprecated": false
-            },
-            "delete": {
-                "tags": [
-                    "Favorites"
-                ],
-                "summary": "Remove favorites",
-                "description": "Delete the favorite configuration based on the favorite Id passed in the path.",
-                "operationId": "RemoveFavorites",
-                "parameters": [
-                    {
-                        "name": "favoriteId",
-                        "in": "path",
-                        "description": "The reference Id of the favorite.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "a3e79000000WYtUAAW"
-                        }
-                    },
-                    {
-                        "name": "x-storefront",
-                        "in": "header",
-                        "description": "The name of the storefront used for the request.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "ECommerce"
-                        }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content type of the request body.",
-                        "required": true,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "application/json"
-                        }
-                    },
-                    {
-                        "name": "x-account",
-                        "in": "header",
-                        "description": "The account value from the header is taken as default account if passed as query parameter.",
-                        "required": false,
-                        "style": "simple",
-                        "explode": false,
-                        "schema": {
-                            "type": "string",
-                            "example": "0011900000hnGsr"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/DeleteRecord"
-                                },
-                                "example": {
-                                    "title": "success",
-                                    "status": 200,
-                                    "data": [
-                                        {
-                                            "id": "a1I3I000000ZhIQUA0",
-                                            "success": true,
-                                            "errors": []
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "deprecated": false
             }
         },
         "/favorites/delete": {
@@ -37402,7 +37320,7 @@
                 "deprecated": false
             }
         },
-        "/assets/{assetId}/suspend": {
+        "/assets/{cartId}/suspend": {
             "post": {
                 "tags": [
                     "Assets"
@@ -37747,7 +37665,7 @@
                 "deprecated": false
             }
         },
-        "/assets/{assetId}/resume": {
+        "/assets/{cartId}/resume": {
             "post": {
                 "tags": [
                     "Assets"
