@@ -19950,7 +19950,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Allows bulk lineitem update for all the fields of lineItem for a given cart. Product Attributes cannot be updated.",
+                    "description": "Allows bulk lineitem update for all the fields of lineItem for a given cart. Product Attributes cannot be updated with this API.",
                     "content": {
                         "application/json": {
                             "schema": {
