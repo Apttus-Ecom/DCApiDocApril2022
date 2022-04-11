@@ -16525,7 +16525,7 @@
                 "deprecated": false
             }
         },
-        "/carts/{cartId}/tax":{
+        "/carts/{cartId}/tax": {
             "post": {
                 "tags": [
                     "Carts"
@@ -16615,76 +16615,76 @@
                                 "schema": {
                                     "$ref": "#/components/schemas/CartItems"
                                 },
-                                "example":{
+                                "example": {
                                     "title": "success",
                                     "status": 200,
                                     "data": {
-                                      "Demo_Renewal_flag": "No",
-                                      "APTS_Local_Bundle_Component_Flag": false,
-                                      "IsOptional": false,
-                                      "IsHidden": false,
-                                      "HideCopyAction": false,
-                                      "HasIncentives": false,
-                                      "AutoRenew": false,
-                                      "Taxable": false,
-                                      "TaxInclusive": false,
-                                      "IsReadOnly": false,
-                                      "HideInvoiceDisplay": false,
-                                      "Operating_Expense_Formula": 0,
-                                      "HasTieredPrice": false,
-                                      "IsSellingTermReadOnly": false,
-                                      "IsPrimaryRampLine": false,
-                                      "Uom": "Each",
-                                      "Term": 1,
-                                      "SyncStatus": "Pending",
-                                      "SellingTerm": 1,
-                                      "SellingFrequency": "One Time",
-                                      "RollupPriceToBundle": true,
-                                      "Quantity": 1,
-                                      "PrimaryLineNumber": 2,
-                                      "PricingStatus": "Pending",
-                                      "PriceIncludedInBundle": false,
-                                      "NetPrice": 0.11,
-                                      "LineType": "Misc",
-                                      "LineStatus": "New",
-                                      "LineNumber": 2,
-                                      "ItemSequence": 1,
-                                      "IsUsageTierModifiable": false,
-                                      "IsQuantityModifiable": false,
-                                      "IsPrimaryLine": true,
-                                      "IsOptionRollupLine": false,
-                                      "IsCustomPricing": false,
-                                      "IsAssetPricing": false,
-                                      "HasOptions": false,
-                                      "HasDefaults": false,
-                                      "HasBaseProduct": false,
-                                      "HasAttributes": false,
-                                      "Frequency": "One Time",
-                                      "ExtendedPrice": 0.11,
-                                      "Description": "Total Tax",
-                                      "Customizable": true,
-                                      "ChargeType": "Sales Tax",
-                                      "BasePrice": 0.11,
-                                      "BaseExtendedPrice": 0.11,
-                                      "AllowableAction": "Unrestricted",
-                                      "AllowRemoval": false,
-                                      "AllowProration": false,
-                                      "AllowManualAdjustment": false,
-                                      "AllocateGroupAdjustment": false,
-                                      "AdjustedPrice": 0.11,
-                                      "AddedBy": "User",
-                                      "ConfigurationId": "a1I790000006gsFEAQ",
-                                      "LastReferencedDate": "2022-04-05T11:51:09.000Z",
-                                      "LastViewedDate": "2022-04-05T11:51:09.000Z",
-                                      "SystemModstamp": "2022-04-05T11:51:09.000Z",
-                                      "LastModifiedById": "00579000000NLzVAAW",
-                                      "LastModifiedDate": "2022-04-05T11:51:09.000Z",
-                                      "CreatedById": "00579000000NLzVAAW",
-                                      "CreatedDate": "2022-04-05T11:51:09.000Z",
-                                      "CurrencyIsoCode": "USD",
-                                      "Name": "LI-0000790456",
-                                      "IsDeleted": false,
-                                      "Id": "a1379000000QpfOAAS"
+                                        "Demo_Renewal_flag": "No",
+                                        "APTS_Local_Bundle_Component_Flag": false,
+                                        "IsOptional": false,
+                                        "IsHidden": false,
+                                        "HideCopyAction": false,
+                                        "HasIncentives": false,
+                                        "AutoRenew": false,
+                                        "Taxable": false,
+                                        "TaxInclusive": false,
+                                        "IsReadOnly": false,
+                                        "HideInvoiceDisplay": false,
+                                        "Operating_Expense_Formula": 0,
+                                        "HasTieredPrice": false,
+                                        "IsSellingTermReadOnly": false,
+                                        "IsPrimaryRampLine": false,
+                                        "Uom": "Each",
+                                        "Term": 1,
+                                        "SyncStatus": "Pending",
+                                        "SellingTerm": 1,
+                                        "SellingFrequency": "One Time",
+                                        "RollupPriceToBundle": true,
+                                        "Quantity": 1,
+                                        "PrimaryLineNumber": 2,
+                                        "PricingStatus": "Pending",
+                                        "PriceIncludedInBundle": false,
+                                        "NetPrice": 0.11,
+                                        "LineType": "Misc",
+                                        "LineStatus": "New",
+                                        "LineNumber": 2,
+                                        "ItemSequence": 1,
+                                        "IsUsageTierModifiable": false,
+                                        "IsQuantityModifiable": false,
+                                        "IsPrimaryLine": true,
+                                        "IsOptionRollupLine": false,
+                                        "IsCustomPricing": false,
+                                        "IsAssetPricing": false,
+                                        "HasOptions": false,
+                                        "HasDefaults": false,
+                                        "HasBaseProduct": false,
+                                        "HasAttributes": false,
+                                        "Frequency": "One Time",
+                                        "ExtendedPrice": 0.11,
+                                        "Description": "Total Tax",
+                                        "Customizable": true,
+                                        "ChargeType": "Sales Tax",
+                                        "BasePrice": 0.11,
+                                        "BaseExtendedPrice": 0.11,
+                                        "AllowableAction": "Unrestricted",
+                                        "AllowRemoval": false,
+                                        "AllowProration": false,
+                                        "AllowManualAdjustment": false,
+                                        "AllocateGroupAdjustment": false,
+                                        "AdjustedPrice": 0.11,
+                                        "AddedBy": "User",
+                                        "ConfigurationId": "a1I790000006gsFEAQ",
+                                        "LastReferencedDate": "2022-04-05T11:51:09.000Z",
+                                        "LastViewedDate": "2022-04-05T11:51:09.000Z",
+                                        "SystemModstamp": "2022-04-05T11:51:09.000Z",
+                                        "LastModifiedById": "00579000000NLzVAAW",
+                                        "LastModifiedDate": "2022-04-05T11:51:09.000Z",
+                                        "CreatedById": "00579000000NLzVAAW",
+                                        "CreatedDate": "2022-04-05T11:51:09.000Z",
+                                        "CurrencyIsoCode": "USD",
+                                        "Name": "LI-0000790456",
+                                        "IsDeleted": false,
+                                        "Id": "a1379000000QpfOAAS"
                                     }
                                 }
                             }
@@ -19950,7 +19950,7 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "Allows bulk Lineitem update for all the fields of lineItem for given cart. ",
+                    "description": "Allows bulk lineitem update for all the fields of lineItem for a given cart. Product Attributes cannot be updated.",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -19959,17 +19959,16 @@
                                     "type": "object"
                                 },
                                 "properties": {
-                                    "Id" : {
+                                    "Id": {
                                         "type": "string"
                                     }
                                 },
                                 "example": [
                                     {
-                                     
-                                      "Id": "a1301000000bwVaAAI",
-                                      "Apttus_Config2__Quantity__c": 2
+                                        "Id": "a1301000000bwVaAAI",
+                                        "Apttus_Config2__Quantity__c": 2
                                     }
-                                  ]
+                                ]
                             }
                         }
                     }
@@ -24517,38 +24516,66 @@
                                     "ProductAttributes": {
                                         "type": "object"
                                     }
+                                }
+                            },
+                            "examples": {
+                                "example1": {
+                                    "summary": "Example 1 without product attributes",
+                                    "value": [
+                                        {
+                                            "LineItem": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__LineItem__c"
+                                                },
+                                                "Id": "a13W0000003AQAHIA4",
+                                                "Apttus_Config2__LineNumber__c": "1.0",
+                                                "Apttus_Config2__PrimaryLineNumber__c": "1.0",
+                                                "Apttus_Config2__PricingStatus__c": "Pending",
+                                                "Apttus_Config2__ConfigurationId__c": "a1IW0000001S3hJMAS",
+                                                "Apttus_Config2__Quantity__C": 2
+                                            },
+                                            "ProductAttributes": null
+                                        },
+                                        {
+                                            "LineItem": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__LineItem__c"
+                                                },
+                                                "Id": "a13W0000003AQAcIAO",
+                                                "Apttus_Config2__LineNumber__c": "1.0",
+                                                "Apttus_Config2__PrimaryLineNumber__c": "2.0",
+                                                "Apttus_Config2__PricingStatus__c": "Pending",
+                                                "Apttus_Config2__OptionId__c": "01t3I000000LwmBQAS",
+                                                "Apttus_Config2__ConfigurationId__c": "a1IW0000001S3hJMAS",
+                                                "Apttus_Config2__Quantity__C": 2
+                                            },
+                                            "ProductAttributes": null
+                                        }
+                                    ]
                                 },
-                                "example": [
-                                    {
-                                        "LineItem": {
-                                            "attributes": {
-                                                "type": "Apttus_Config2__LineItem__c"
+                                "example2": {
+                                    "summary": "Example 2 with product attributes",
+                                    "value": [
+                                        {
+                                            "LineItem": {
+                                                "attributes": {
+                                                    "type": "Apttus_Config2__LineItem__c"
+                                                },
+                                                "Id": "a13W0000003AQAHIA4",
+                                                "Apttus_Config2__LineNumber__c": "1.0",
+                                                "Apttus_Config2__PrimaryLineNumber__c": "1.0",
+                                                "Apttus_Config2__PricingStatus__c": "Pending",
+                                                "Apttus_Config2__ConfigurationId__c": "a1IW0000001S3hJMAS",
+                                                "Apttus_Config2__Quantity__C": 2
                                             },
-                                            "Id": "a13W0000003AQAHIA4",
-                                            "Apttus_Config2__LineNumber__c": "1.0",
-                                            "Apttus_Config2__PrimaryLineNumber__c": "1.0",
-                                            "Apttus_Config2__PricingStatus__c": "Pending",
-                                            "Apttus_Config2__ConfigurationId__c": "a1IW0000001S3hJMAS",
-                                            "Apttus_Config2__Quantity__C": 2
-                                        },
-                                        "ProductAttributes": null
-                                    },
-                                    {
-                                        "LineItem": {
-                                            "attributes": {
-                                                "type": "Apttus_Config2__LineItem__c"
-                                            },
-                                            "Id": "a13W0000003AQAcIAO",
-                                            "Apttus_Config2__LineNumber__c": "1.0",
-                                            "Apttus_Config2__PrimaryLineNumber__c": "2.0",
-                                            "Apttus_Config2__PricingStatus__c": "Pending",
-                                            "Apttus_Config2__OptionId__c": "01t3I000000LwmBQAS",
-                                            "Apttus_Config2__ConfigurationId__c": "a1IW0000001S3hJMAS",
-                                            "Apttus_Config2__Quantity__C": 2
-                                        },
-                                        "ProductAttributes": null
-                                    }
-                                ]
+                                            "ProductAttributes": {
+                                                "Id": "a3Y8D000000PSDYUA4",
+                                                "Apttus_Config2__LineItemId__c": "a2u8D000000L1u9QAC",
+                                                "Apttus_Config2__Color__c": "Black"
+                                            }
+                                        }
+                                    ]
+                                }
                             }
                         }
                     }
@@ -38144,7 +38171,7 @@
                 },
                 "deprecated": false
             }
-        },        
+        },
         "/quotes/{quoteId}/accept": {
             "post": {
                 "tags": [
@@ -38390,7 +38417,7 @@
                 },
                 "deprecated": false
             }
-        }, 
+        },
         "/assets/{cartId}/renewAsset": {
             "post": {
                 "tags": [
