@@ -38418,7 +38418,7 @@
                 "deprecated": false
             }
         },
-        "/assets/{cartId}/renewAsset": {
+        "/assets/{cartId}/renew": {
             "post": {
                 "tags": [
                     "Assets"
@@ -38613,7 +38613,7 @@
                 "deprecated": false
             }
         },
-        "/assets/{cartId}/incrementAsset": {
+        "/assets/{cartId}/increment": {
             "post": {
                 "tags": [
                     "Assets"
@@ -38831,7 +38831,7 @@
                 "deprecated": false
             }
         },
-        "/assets/{cartId}/amendAsset": {
+        "/assets/{cartId}/amend": {
             "post": {
                 "tags": [
                     "Assets"
